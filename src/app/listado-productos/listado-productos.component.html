@@ -1,0 +1,33 @@
+<table>
+  <thead>
+    <th>Ver</th>
+    <th>Eliminar</th>
+    <th>Id</th>
+
+    <th>Titulo</th>
+    <th>Precio</th>
+    <th>Descripción</th>
+    <th>Categoria</th>
+    <!-- <th>Imagen</th> -->
+    <!-- <th>Calificación</th> -->
+  </thead>
+
+  <tbody>
+    @for(item of productos; track $index){
+    <tr>
+      <td><a [routerLink]="['/detalle', item.id]">Ver</a></td>
+      <td class="text-center">
+        <mat-icon style="cursor: pointer;" (click)="eliminarProducto(item.id)">delete</mat-icon>
+      </td>
+      <td>{{item.id}}</td>
+      <td>{{item.title}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.descripcion}}</td>
+      <td>{{item.category}}</td>
+      <!-- <td><img [src]="item.image" alt="" style="width: 100px;"></td> -->
+      <!-- <td>{{item.rating.rate}}</td> -->
+    </tr>
+    }
+  </tbody>
+
+</table>
